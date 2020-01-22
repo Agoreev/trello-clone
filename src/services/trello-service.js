@@ -13,6 +13,20 @@ export default class TrelloService {
           items: ["go shopping", "go to gym"]
         }
       ]
+    },
+    {
+      id: 2,
+      name: "Home work",
+      cards: [
+        {
+          name: "Monday",
+          items: ["get to work", "clean house"]
+        },
+        {
+          name: "Friday",
+          items: ["go shopping", "go to gym"]
+        }
+      ]
     }
   ];
 

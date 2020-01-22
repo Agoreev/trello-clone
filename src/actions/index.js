@@ -26,4 +26,36 @@ const fetchDesks = trelloService => () => dispatch => {
     .catch(err => dispatch(desksError(err)));
 };
 
-export { fetchDesks };
+const deskAdded = name => {
+  return {
+    type: "DESK_ADDED",
+    payload: name
+  };
+};
+
+const deskCreating = () => {
+  return {
+    type: "DESK_CREATING"
+  };
+};
+
+const deskCreatingCanceled = () => {
+  return {
+    type: "DESK_CREATING_CANCELED"
+  };
+};
+
+const deskNameChanged = name => {
+  return {
+    type: "DESK_NAME_CHANGE",
+    payload: name
+  };
+};
+
+export {
+  fetchDesks,
+  deskAdded,
+  deskCreating,
+  deskCreatingCanceled,
+  deskNameChanged
+};

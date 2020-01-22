@@ -1,0 +1,18 @@
+.desk {
+  padding: 30px 10px;
+  margin: 20px;
+  background-color: #94e49b;
+  width: 250px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.desk:hover {
+  transform: scale(1.05);
+}
+
+.desk__name {
+  font-size: 1.6rem;
+  color: white;
+}
