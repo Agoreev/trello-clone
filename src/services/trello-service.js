@@ -1,4 +1,5 @@
 export default class TrelloService {
+  maxId = 100;
   data = [
     {
       id: 1,
@@ -35,6 +36,20 @@ export default class TrelloService {
       setTimeout(() => {
         resolve(this.data);
       }, 700);
+    });
+  };
+
+  createDesk = name => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        const desk = {
+          id: this.maxId++,
+          name: name,
+          cards: []
+        };
+        //this.data.push(desk);
+        resolve(desk);
+      }, 100);
     });
   };
 }

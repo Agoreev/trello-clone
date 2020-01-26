@@ -2,8 +2,6 @@ const updateDeskList = (state, action) => {
   if (state === undefined) {
     return {
       desks: [],
-      deskCreatingState: false,
-      newDeskName: null,
       loading: true,
       error: null
     };
@@ -29,6 +27,12 @@ const updateDeskList = (state, action) => {
         desks: [],
         loading: false,
         error: action.payload
+      };
+    case "DESK_ADDED":
+      console.log(state.desks);
+      return {
+        ...state,
+        desks: [...state.desks, action.payload]
       };
     default:
       return state;

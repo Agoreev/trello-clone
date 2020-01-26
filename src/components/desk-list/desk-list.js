@@ -5,14 +5,20 @@ import { connect } from "react-redux";
 import Spinner from "../spinner";
 import ErrorIndicator from "../error-indicator";
 import { fetchDesks } from "../../actions";
-import { compose, bindActionCreators } from "redux";
+import { compose } from "redux";
 import { withTrelloService } from "../hoc";
+import NewDeskItem from "../new-desk-item";
 
 const DeskList = ({ desks }) => {
   const desksList = desks.map(desk => {
     return <DeskListItem key={desk.id} desk={desk}></DeskListItem>;
   });
-  return <div className="desks-list">{desksList}</div>;
+  return (
+    <div className="desks-list">
+      <NewDeskItem />
+      {desksList}
+    </div>
+  );
 };
 
 class DesksListContainer extends React.Component {
@@ -28,7 +34,11 @@ class DesksListContainer extends React.Component {
     if (error) {
       return <ErrorIndicator />;
     }
-    return <DeskList desks={desks} />;
+    return (
+      <React.Fragment>
+        <DeskList desks={desks} />
+      </React.Fragment>
+    );
   }
 }
 
@@ -41,12 +51,9 @@ const mapStateToProps = ({ desks, loading, error }) => {
 };
 
 const mapDispatchToProps = (dispatch, { trelloService }) => {
-  return bindActionCreators(
-    {
-      fetchDesks: fetchDesks(trelloService)
-    },
-    dispatch
-  );
+  return {
+    fetchDesks: () => fetchDesks(trelloService, dispatch)
+  };
 };
 
 export default compose(

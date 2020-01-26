@@ -18,44 +18,28 @@ const desksError = error => {
   };
 };
 
-const fetchDesks = trelloService => () => dispatch => {
-  dispatch(desksRequested);
+const deskAdded = newDesk => {
+  return {
+    type: "DESK_ADDED",
+    payload: newDesk
+  };
+};
+
+const fetchDesks = (trelloService, dispatch) => {
+  dispatch(desksRequested());
   trelloService
     .getDesks()
     .then(data => dispatch(desksLoaded(data)))
     .catch(err => dispatch(desksError(err)));
 };
 
-const deskAdded = name => {
-  return {
-    type: "DESK_ADDED",
-    payload: name
-  };
+const addDesk = (name, trelloService, dispatch) => {
+  trelloService
+    .createDesk(name)
+    .then(data => {
+      dispatch(deskAdded(data));
+    })
+    .catch(err => dispatch(desksError(err)));
 };
 
-const deskCreating = () => {
-  return {
-    type: "DESK_CREATING"
-  };
-};
-
-const deskCreatingCanceled = () => {
-  return {
-    type: "DESK_CREATING_CANCELED"
-  };
-};
-
-const deskNameChanged = name => {
-  return {
-    type: "DESK_NAME_CHANGE",
-    payload: name
-  };
-};
-
-export {
-  fetchDesks,
-  deskAdded,
-  deskCreating,
-  deskCreatingCanceled,
-  deskNameChanged
-};
+export { fetchDesks, addDesk };
