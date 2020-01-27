@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const DeskListItem = ({ desk }) => {
   const { id, name } = desk;
   return (
-    <Link to={`/desks/${id}`}>
+    <Link className="desk-link" to={`/desks/${id}`}>
       <div className="desk" key={id}>
-        <span className="desk__name">{name}</span>
+        <span className="desk__title">{name}</span>
       </div>
     </Link>
   );

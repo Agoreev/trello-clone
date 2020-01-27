@@ -39,6 +39,14 @@ export default class TrelloService {
     });
   };
 
+  getDesk = id => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(this.data.find(desk => desk.id === id));
+      }, 100);
+    });
+  };
+
   createDesk = name => {
     return new Promise(resolve => {
       setTimeout(() => {
@@ -47,7 +55,7 @@ export default class TrelloService {
           name: name,
           cards: []
         };
-        //this.data.push(desk);
+        //this.data.push(desk); тут надо как-то менять data
         resolve(desk);
       }, 100);
     });

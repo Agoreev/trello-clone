@@ -1,24 +1,17 @@
-.desk {
+.cards-list__desk-title {
   padding: 30px 10px;
   margin: 20px;
-  background-color: white;
+  background-color: 94e49b;
   width: 250px;
   text-align: center;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   font-family: "Roboto Condensed", sans-serif;
   border: none;
+  font-size: 1.2rem;
+  color: white;
 }
-
-.desk:hover {
-  transform: scale(1.05);
-}
-
-.desk__title {
-  font-size: 1.6rem;
-  color: #444;
-}
-
-.desk-link {
-  max-height: 130px;
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
 }

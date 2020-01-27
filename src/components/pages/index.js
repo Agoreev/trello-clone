@@ -1,2 +1,3 @@
 import DesksPage from "./desks-page";
-export { DesksPage };
+import CardsPage from "./cards-page";
+export { DesksPage, CardsPage };

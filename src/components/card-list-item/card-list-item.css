@@ -1,4 +1,4 @@
-.desk {
+.card {
   padding: 30px 10px;
   margin: 20px;
   background-color: white;
@@ -10,15 +10,7 @@
   border: none;
 }
 
-.desk:hover {
-  transform: scale(1.05);
-}
-
-.desk__title {
+.card__title {
   font-size: 1.6rem;
   color: #444;
-}
-
-.desk-link {
-  max-height: 130px;
 }

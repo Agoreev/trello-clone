@@ -34,7 +34,8 @@ a {
 
 @media (min-width: 1200px) {
   .container {
-    width: 1180px;
+    width: auto;
+    margin: 0 40px;
   }
 }
 
@@ -56,6 +57,7 @@ a {
 .btn {
   border: 0;
   border-radius: 0.25rem;
+  box-sizing: content-box;
   background: transparent;
   color: white;
   font-family: "Roboto Condensed", sans-serif;
@@ -106,7 +108,7 @@ a {
   border-bottom: 2px solid white;
   outline: 0;
   font-size: 1.2rem;
-  color: #333;
+  color: white;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -128,7 +130,7 @@ a {
   display: block;
   transition: 0.2s;
   font-size: 1rem;
-  color: #333;
+  color: white;
 }
 
 .form__field:focus ~ .form__label {
