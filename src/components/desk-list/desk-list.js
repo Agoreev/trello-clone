@@ -42,7 +42,7 @@ class DesksListContainer extends React.Component {
   }
 }
 
-const mapStateToProps = ({ desks, loading, error }) => {
+const mapStateToProps = ({ deskList: { desks, loading, error } }) => {
   return {
     desks,
     loading,
