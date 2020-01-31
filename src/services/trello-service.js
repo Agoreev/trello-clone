@@ -6,10 +6,12 @@ export default class TrelloService {
       name: "Tasks",
       cards: [
         {
+          id: 1,
           name: "Monday",
           items: ["get to work", "clean house"]
         },
         {
+          id: 2,
           name: "Friday",
           items: ["go shopping", "go to gym"]
         }
@@ -20,10 +22,12 @@ export default class TrelloService {
       name: "Home work",
       cards: [
         {
+          id: 1,
           name: "Monday",
           items: ["get to work", "clean house"]
         },
         {
+          id: 2,
           name: "Friday",
           items: ["go shopping", "go to gym"]
         }
